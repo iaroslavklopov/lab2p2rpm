@@ -1,0 +1,42 @@
+﻿<Window x:Class="lab2p2rpm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab2p2rpm"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <InkCanvas x:Name="inkC" Grid.Column="0">
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes Color="Black" Height="10" Width="10"/>
+            </InkCanvas.DefaultDrawingAttributes>
+        </InkCanvas>
+        <ComboBox x:Name="ClrCg" Grid.Column="1" SelectedIndex="0" SelectionChanged="ColorChange" Margin="0,0,0,381">
+            <ComboBoxItem Content="Black"/>
+            <ComboBoxItem Content="Dark Blue"/>
+            <ComboBoxItem Content="Dark Red"/>
+        </ComboBox>
+        <Slider x:Name="Tolshina" Grid.Column="1" Minimum="1" Maximum="20" Value="10" ValueChanged="Tolshina_ValueChanged" Margin="24,58,24,332"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <RadioButton Grid.Row="0" GroupName="groupname" x:Name="risovat" Checked="risovat_Checked" Margin="0,101,0,144" Grid.RowSpan="2">
+                Draw
+            </RadioButton>
+            <RadioButton Grid.Row="1" GroupName="groupname" x:Name="vybor" Checked="vybor_Checked" Margin="0,0,0,103">
+                Select
+            </RadioButton>
+            <RadioButton Grid.Row="1" GroupName="groupname" x:Name="yDelete" Checked="yDelete_Checked" Margin="0,62,0,10">
+                Delete
+            </RadioButton>
+        </Grid>
+    </Grid>
+</Window>
